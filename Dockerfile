@@ -46,4 +46,9 @@ RUN mkdir /var/www/etsis_tmp \
 
 EXPOSE 80
 
+# copy script to configure stuff
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 CMD /usr/sbin/httpd -D FOREGROUND
